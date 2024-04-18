@@ -35,30 +35,30 @@ CRUD
 
 CRUD
 - Second Data set (Daily Tasks) OnetoMany
-    name = user REQUIRED
-    date changeable future and know REQUIRED
-    time crud
-    task/description of task / crud REQUIRED
-    tracker / reminder /alert
+    - name = user REQUIRED
+    - date changeable future and know REQUIRED
+    - time crud
+    - task/description of task / crud REQUIRED
+    - tracker / reminder /alert
 
 
 Select event ONLY
 - Thrid Data set (Featured Events) ManytoMany
-    name
-    date/time
-    location = (state, city, address)
-    VP (user can filter order)
+    - name
+    - date/time
+    - location = (state, city, address)
+    - VP (user can filter order)
 
 
 CRUD (MVP)
 - Fourth Data set (Photo) ManytoMany
-    url (AWS | S3/IAM)
-    task (ForgienKey)
+    - url (AWS | S3/IAM)
+    - task (ForgienKey)
 
 
 (MVP)
 - Fifth Data set (Weather)
-    url (API)
+    - url (API)
 
 
 ## General lay out of HTML pages
@@ -103,8 +103,6 @@ CRUD (MVP)
 
 # Project Pitch
 [Download PDF](/All%20Purpose%20PlannerPitch.pdf)
-
-
 
 
 # Credits
