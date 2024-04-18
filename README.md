@@ -5,21 +5,21 @@
 The purpose of this life planner is to organize daily task through your life. You will be able to login and logout. Create your own profile/user and edit it. You will be able to CRUD task. The user will be able to view all task and then click each task to view them, edit, delete. The app will have a home page that show how people have used this app and how it has helped them in life. The about page will have details on how to use this app. There will be a featured events page that you can click on to add to the task you want. There will be a weather section that once you put your zip code in you will see the weather forcast. You will be able to add photos to your tasks that will be displayed in the cards in both the view all and individual detail. 
 
 ## As A User (wants)
-- AAU i want to create task
+- AAU I want to create task
 - AAU CRUD task
-- AAU i want to add featured events to page to go to only to READ
-- AAU i want to view the pages of task, events, profile, details of task
-- AAU i want a navigation to how to use page
-- AAU i want login/logout 
+- AAU I want to add featured events to page to go to only to READ
+- AAU I want to view the pages of task, events, profile, details of task
+- AAU I want a navigation to how to use page
+- AAU I want login/logout 
 - AAU have a sign up page
-- AAU i want a weather section to see how the weather will be on certain days in certain locations
-- AAU i want a navigation bar to travese the pages
+- AAU I want a weather section to see how the weather will be on certain days in certain locations
+- AAU I want a navigation bar to travese the pages
 - AAU add photos to tasks
-- AAU i want a page for how to use the app
-- AAU i want a page that shows testmony of the app
-- AAU i want to have the planner track task for individual
-- AAU the tracker to remind | ALERT when prior and on time of set date/time
-- AAU i want to be able to edit profile | reset password
+- AAU I want a page for how to use the app
+- AAU I want a page that shows testmony of the app
+- AAU I want to have the planner track task for individual
+- AAU I want the tracker to remind | ALERT when prior and on time of set date/time
+- AAU I want to be able to edit profile | reset password
 
 
 ## Over all Data set layout
@@ -102,6 +102,8 @@ CRUD (MVP)
 [Trillo planner page](https://trello.com/b/NBZibZ95/planner)
 
 # Project Pitch
+[Download PDF](/All%20Purpose%20PlannerPitch.pdf)
+
 
 
 
