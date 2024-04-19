@@ -3,7 +3,7 @@
 
 <h1>All Tasks</h1>
 
-{% for cat in cats %}
+{% for task in tasks %}
   <a href="{% url 'detail' task.id %}">
     <div class="card">
       <div class="card-content">
