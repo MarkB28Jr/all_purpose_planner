@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -8,10 +8,18 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
-  return render(request, 'home.html')
+    return render(request, 'home.html')
 
 def about(request):
-  return render(request, 'about.html')
+    return render(request, 'about.html')
+
+# @login_required
+def tasks_index(request):
+    return render(request, 'tasks/index.html')
+
+# @login_required
+def tasks_detail(request, cat_id):
+    return render(request, 'tasks/detail.html')
 
 def signup(request,):
     error_message = ''
