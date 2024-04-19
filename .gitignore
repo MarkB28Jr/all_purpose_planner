@@ -8,5 +8,6 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 media
-main_app/__pycache__
-all_purpose_planner/__pycache__
+main_app/__pycache__/
+all_purpose_planner/__pycache__/
+
