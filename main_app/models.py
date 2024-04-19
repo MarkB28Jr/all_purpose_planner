@@ -22,15 +22,15 @@ FEATUREDEVENTS = ( #Data in this tuple should look like this ('CcN', 'Comic Con,
 
 
 class Task(models.Model):
-    name = models.CharField(max_length=50),
-    description = models.TextField(max_length=200),# Image needs a default image
-    image_url = models.CharField(max_length=150, default=''),
+    name = models.CharField(max_length=50)
+    description = models.TextField(max_length=200)# Image needs a default image
+    image_url = models.CharField(max_length=150, default='')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     
 class FeaturedEvent(models.Model):
-    description = models.TextField(max_length=200),# Image needs a default image
-    image_url = models.CharField(max_length=150, default=''), 
+    description = models.TextField(max_length=200)# Image needs a default image
+    image_url = models.CharField(max_length=150, default='')
     featuredEvents =models.CharField(
         max_length=150,
             choices= FEATUREDEVENTS
