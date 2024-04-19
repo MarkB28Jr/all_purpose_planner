@@ -1,8 +1,8 @@
 # all_purpose_planner
 
 ## Purpose for App
-
 The purpose of this life planner is to organize daily task through your life. You will be able to login and logout. Create your own profile/user and edit it. You will be able to CRUD task. The user will be able to view all task and then click each task to view them, edit, delete. The app will have a home page that show how people have used this app and how it has helped them in life. The about page will have details on how to use this app. There will be a featured events page that you can click on to add to the task you want. There will be a weather section that once you put your zip code in you will see the weather forcast. You will be able to add photos to your tasks that will be displayed in the cards in both the view all and individual detail. 
+
 
 ## As A User (wants)
 - AAU I want to create task
@@ -67,16 +67,19 @@ CRUD (MVP)
     - about.html
     - base.html
 
+
 - User | Profile pages
     - profile.html
     - create_profile.html
     - create_user.html
     - edit_user.html
 
+
 - Task pages
     - create_task.html
     - index.html
     - Details/edit/delete_task.html | add photo | preview of featured events | weather API if post MVP
+
 
 - Featured Events pages
     - feature_events.html
