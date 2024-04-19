@@ -21,7 +21,7 @@ class Task(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     
-class FeaturedEvents(models.Model):
+class FeaturedEvent(models.Model):
     description = models.TextField(max_length=200),# Image needs a default image
     image_url = models.CharField(max_length=150, default=''), 
     featuredEvents =models.CharField(
