@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 # Create your models here
 
 
@@ -13,11 +14,11 @@ FEATUREDEVENTS = ( #Data in this tuple should look like this ('CcN', 'Comic Con,
 
 
 
-class Tasks(models.Model):
+class Task(models.Model):
     name = models.CharField(max_length=50),
     description = models.TextField(max_length=200),# Image needs a default image
     image_url = models.CharField(max_length=150, default='')
-    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     
 class FeaturedEvents(models.Model):
