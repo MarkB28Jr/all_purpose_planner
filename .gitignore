@@ -1,6 +1,5 @@
-.venv
-.venv/
 .env
+.venv
 *.log
 *.pot
 *.pyc
@@ -9,11 +8,6 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 media
-.DS_Store
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
+main_app/__pycache__/
+all_purpose_planner/__pycache__/
+
