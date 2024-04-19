@@ -3,6 +3,11 @@ from django.db import models
 # Create your models here
 
 
+FEATUREDEVENTS = ( #Data in this tuple should look like this ('COM', 'Comic Con') 
+    ('', ''),
+    ('', ''),
+    ('', ''),
+)
 
 
 
