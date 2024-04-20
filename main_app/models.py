@@ -1,9 +1,8 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
-# Create your models here
 
-
+# DATA for FeaturedEvents
 FEATUREDEVENTS = ( #Data in this tuple should look like this ('CcN', 'Comic Con, venue, city / state') 
     ('NjH', 'New Orleans Jazz Festival, Fair Grounds Race Course & Slots, New Orleans LA'), # https://www.nojazzfest.com Date (April 25-28 & May 2-5 2024)
     ('F1M', 'F1 Crypto.com Miami Grand Prix, Miami FL'), # https://f1miamigp.com Date (May 3-5 2024)
@@ -21,30 +20,29 @@ FEATUREDEVENTS = ( #Data in this tuple should look like this ('CcN', 'Comic Con,
 
 
 
+# Create your models here
 class Task(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=200)# Image needs a default image
     image_url = models.CharField(max_length=150, default='')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    
+    def __str__(self):
+        return f'{self.name} ({self.id})' 
+    def get_absolute_url(self):
+        return reverse('detail', kwargs={'task_id': self.id})  
+
 class FeaturedEvent(models.Model):
     description = models.TextField(max_length=200)# Image needs a default image
     image_url = models.CharField(max_length=150, default='') 
     featuredEvents =models.CharField(
         max_length=150,
         choices= FEATUREDEVENTS
-            
     )
-    
+
 class Photo(models.Model):
     url = models.CharField(max_length=200)
     featured_event = models.ForeignKey(FeaturedEvent, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"Photo for FeaturedEvent: {self.featured_event_id} @{self.url}"
-    
-
-    
-    
-     
