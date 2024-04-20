@@ -36,7 +36,13 @@ class FeaturedEvent(models.Model):
         choices= FEATUREDEVENTS
             
     )
+    
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    featured_event = models.ForeignKey(FeaturedEvent, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"Photo for FeaturedEvent: {self.featured_event_id} @{self.url}"
     
 
     
