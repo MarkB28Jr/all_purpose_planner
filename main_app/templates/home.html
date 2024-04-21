@@ -1,35 +1,41 @@
 {% extends 'base.html' %}
+
 {% block content %}
-
-<h1>All Purpose Planner</h1>
-
-<!-- Sign Up/Sign In Links -->
-<div>
-    <a href="{% url 'signup' %}">Sign Up</a> |
-    <a href="{% url 'login' %}">Sign In</a>
+<div class="row">
+    <div class="col s12 m6">
+        <h2>All Purpose Planner</h2>
+        <p>Welcome to the All Purpose Planner application!</p>
+        <p>Organize your daily tasks and enhance your productivity with our user-friendly planner.</p>
+        <p><a href="{% url 'signup' %}" class="btn">Sign Up</a> | <a href="{% url 'login' %}" class="btn">Sign In</a></p>
+    </div>
+    <div class="col s12 m6">
+        
+    </div>
 </div>
 
 <!-- Testimonials -->
-<div>
+<div class="row">
     <h2>Testimonials</h2>
-    <div class="testimonial">
-        
-        <p><strong>Kevin Jackson</strong></p>
-        <p>No words. Truly amazing and user-friendly</p>
-        <p>Rating: &#9733;&#9733;&#9733;&#9733;</p>
+    <div class="col s12 m4">
+        <div class="testimonial">
+            <p><strong>Kevin Jackson</strong></p>
+            <p>No words. Truly amazing and user-friendly</p>
+            <p>Rating: &#9733;&#9733;&#9733;&#9733;</p>
+        </div>
     </div>
-    <div class="testimonial">
-        
-        <p><strong>Yana SB</strong></p>
-        <p>All Purpose Planner App guides me to be on time and follow the discipline. I am a professor of university and I need to track my daily task with my students, and this app has played a vital role to follow my schedule. Thank you "All Purpose Planner"</p>
-        <p>Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</p>
+    <div class="col s12 m4">
+        <div class="testimonial">
+            <p><strong>Yana SB</strong></p>
+            <p>All Purpose Planner App guides me to be on time and follow the discipline.</p>
+            <p>Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        </div>
     </div>
-    <div class="testimonial">
-        
-        <p><strong>Sabrina Walton</strong></p>
-        <p>This Trakcer App is awesome. I am able to trace my daily life. Before, i was not able to cope my timeline and schedule to complete my task, now I am ahead of time. Thank goes to this app.</p>
-        <p>Rating: &#9733;&#9733;&#9733;</p>
+    <div class="col s12 m4">
+        <div class="testimonial">
+            <p><strong>Sabrina Walton</strong></p>
+            <p>This Tracker App is awesome. I am able to trace my daily life.</p>
+            <p>Rating: &#9733;&#9733;&#9733;</p>
+        </div>
     </div>
 </div>
-
 {% endblock %}
