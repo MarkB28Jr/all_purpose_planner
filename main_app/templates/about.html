@@ -1,25 +1,47 @@
 {% extends 'base.html' %}
+
 {% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h3>THIS APP WILL EMPOWER YOUR DAILY LIFE</h3>
+            <p>Welcome to the All Purpose Planner App, your ultimate companion in staying organized, focused, and on track with your goals and tasks. Designed with simplicity and efficiency in mind, our app empowers you to take control of your time and productivity like never before.</p>
+            
+        </div>
+    </div>
 
-<h1>About</h1>
+    <div class="row">
+        <div class="col s12">
+            <h2>What Sets Us Apart:</h2>
+            <p>At this Planner App, we understand the importance of seamless task management and goal tracking in today's fast-paced world. That's why we've crafted a solution that combines intuitive design with powerful features to help you accomplish more with less effort.</p>
+        </div>
+    </div>
 
-<p>Welcome to our ALL PURPOSE PLANNER application! Our goal is to help you organize your daily tasks and enhance your productivity throughout your life journey. Our moto is to 'Empower Our Daily Life'</p>
+    <div class="row">
+        <div class="col s12">
+            <h2>Key Features:</h2>
+            <ul>
+                <li><strong>Effortless Task Management:</strong> Create, organize, and prioritize tasks with ease. Our intuitive interface makes it simple to stay on top of your to-do list, whether you're at home, work, or on the go.</li>
+                <li><strong>Customizable Goal Tracking:</strong> Set personal and professional goals, track your progress, and celebrate your achievements along the way. Our flexible goal tracking system adapts to your needs, allowing you to define milestones and deadlines that motivate you to succeed.</li>
+                <li><strong>Insightful Analytics:</strong> Gain valuable insights into your productivity habits with our built-in analytics tools. Visualize your performance over time, identify patterns, and make informed decisions to optimize your workflow.</li>
+                <li><strong>Collaboration Made Easy:</strong> Share tasks and goals with teammates, family members, or collaborators effortlessly. Collaborative features ensure seamless communication and coordination, enabling you to work together towards common objectives.</li>
+            </ul>
+        </div>
+    </div>
 
-<p>With our Planner App, you can:</p>
-<ul>
-  <li>Login and logout securely to manage your tasks.</li>
-  <li>Create and customize your profile to reflect your personality and preferences.</li>
-  <li>Easily add, edit, view, and delete tasks to stay organized and on track.</li>
-  <li>Explore a user-friendly interface to access all your tasks and navigate between them effortlessly.</li>
-  <li>Discover how others have benefitted from using our app through user's testimonials.</li>
-  <li>Find detailed instructions on how to make the most of our app on this about page.</li>
-  <li>Enhance your task management experience by integrating featured events directly into your planner.</li>
-  <li>Stay informed about the weather forecast in your area to plan your tasks accordingly.</li>
-  <li>Personalize your tasks by adding photos, making your planner visually appealing and engaging.</li>
-  <li>Explore local featured events</li>
-</ul>
+    <div class="row">
+        <div class="col s12">
+            <h2>Our Mission:</h2>
+            <p>At this Planner App, our mission is simple: to empower individuals and teams to reach their full potential by providing them with the tools they need to succeed. Whether you're striving to meet deadlines, achieve personal milestones, or improve your work-life balance, we're here to support you every step of the way. 
+            </p>
+        </div>
+    </div>
 
-<p>We're dedicated to providing you with a seamless and enjoyable task management experience. Let's embark on this journey together!</p>
-
+    <div class="row">
+        <div class="col s12">
+            <h2>Get Started Today:</h2>
+            <p>Ready to take control of your time and productivity? <a href="{% url 'signup' %}">Sign up today</a> and start your journey towards greater efficiency and success!</p>
+        </div>
+    </div>
+</div>
 {% endblock %}
-
