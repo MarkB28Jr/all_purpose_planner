@@ -21,7 +21,6 @@ class Task(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=200)# Image needs a default image
     image_url = models.CharField(max_length=150, default='')
-    date = models.DateField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
