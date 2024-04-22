@@ -12,7 +12,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
@@ -49,7 +48,6 @@ def add_photo(request, featured_event_id):
             print(e)
     return redirect('home')  # Redirect to home if no photo is provided
 
-
 def signup(request):
     if request.user.is_authenticated:
         return redirect('home')  # Redirect to home if user is already logged in
@@ -66,13 +64,19 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-
+@login_required
+def add_featured_event(request, cat_id):
+  form = FeedingForm(request.POST)
+  if form.is_valid():
+    new_feeding = form.save(commit=False)
+    new_feeding.cat_id = cat_id
+    new_feeding.save()
+  return redirect('detail', cat_id=cat_id)
 
 # Class'set
 class TaskCreate(LoginRequiredMixin ,CreateView):
     model = Task
     fields = ['name', 'description']
-
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)

@@ -16,21 +16,20 @@ FEATUREDEVENTS = ( #Data in this tuple should look like this ('CcN', 'Comic Con,
     ('SfF', 'Sundance Film Festival, Park City UT'), # https://www.parkcity.org/departments/special-events-facilities/sundance-film-festival Date (Jan 23- Feb 2 2025)
 )
 
-
-
-
-
 # Create your models here
 class Task(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=200)# Image needs a default image
     image_url = models.CharField(max_length=150, default='')
+    date = models.DateField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name} ({self.id})' 
     def get_absolute_url(self):
-        return reverse('detail', kwargs={'task_id': self.id})  
+        return reverse('detail', kwargs={'task_id': self.id})
+    def add_featured_event(self):
+        return self.feeding_set.filter(date=date.today()).count() >= len(FEATUREDEVENTS)
 
 class FeaturedEvent(models.Model):
     description = models.TextField(max_length=200)# Image needs a default image
@@ -39,6 +38,8 @@ class FeaturedEvent(models.Model):
         max_length=150,
         choices= FEATUREDEVENTS
     )
+    def __str__(self):
+        return self.name
 
 class Photo(models.Model):
     url = models.CharField(max_length=200)
