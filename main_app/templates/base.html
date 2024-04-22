@@ -23,7 +23,7 @@
                 <ul class="right">
                     <li><a href="{% url 'about' %}">About</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'events' %}">Featured Events</a></li>
+                    <li><a href="{% url 'featured_event' %}">Featured Events</a></li>
                     <li><a href="{% url 'tasks_create' %}">Add Task</a></li>
                     <li><a href="{% url 'index' %}">Tasks</a></li>
                     <li>
