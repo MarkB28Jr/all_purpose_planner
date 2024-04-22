@@ -1,29 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-
 <div class="container">
     <div class="row">
         <div class="col s12">
-            <h2>All Purpose Planner</h2>
+            <h2 class="grey-text text-darken-2">All Purpose Planner</h2>
             <p>Welcome to the All Purpose Planner application!</p>
             <p>Organize your daily tasks and enhance your productivity with our user-friendly planner.</p>
         </div>
     </div>
 
     <div class="row">
-        <div class="col s12 m6">
-            <p><strong>Additional information or description about this App?</strong></p>
-            <p>Please <a href="{% url 'signup' %}" class="tab-link">Sign up today</a></p>
-            <p>Already have an account? <a href="{% url 'login' %}" class="tab-link">Sign In Here</a></p>
-        </div>
-        <div class="col s12 m6">
-            
+        <div class="col s12">
+            <h3 class="grey-text text-darken-2">Want to know about Us?</h3>
+            <p class="grey-text text-darken-3">Please <a href="{% url 'about' %}" class="about-link"><strong>Hop on In</strong></a> <i class="material-icons">arrow_backward</i></p>
         </div>
     </div>
-
+    
     <!-- Testimonials -->
     <div class="row">
-        <h2>Testimonials</h2>
+        <h2 class="grey-text text-darken-2">Testimonials</h2>
         <div class="col s12 m4">
             <div class="testimonial">
                 <p><strong>Kevin Jackson</strong></p>
@@ -42,7 +37,7 @@
             <div class="testimonial">
                 <p><strong>Sabrina Walton</strong></p>
                 <p>This Tracker App is awesome. I am able to trace my daily life.</p>
-                <p>Rating: &#9733;&#9733;&#9733;</p>
+                <p>Rating: &#9733;&#9733;&#9733;&#9733;</p>
             </div>
         </div>
     </div>
