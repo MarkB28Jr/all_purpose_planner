@@ -5,7 +5,7 @@
 
 <div class="row">
     <!-- Start of the Details  -->
-    <div class="col s9">
+    <div class="col s6">
         <div class="card">
             <div class="card-content" id="full-detail-card">
                 <span class="card-title">{{ task.name }}</span>
@@ -27,32 +27,20 @@
                 <button type="submit" class="btn">Upload Photo</button>
             </form>
         </div>
-    </div>
-    <div class="col s3">
-        <div class="card">
-            <div class="card-content" id="full-detail-card">
-                <span class="card-title">{{ task.name }}</span>
-                <p>Description: {{ task.description|linebreaks }}</p>
-            </div>
-            <div class="card-action">
-                <a href="{% url 'tasks_update' task.id %}">Edit</a>
-                <a href="{% url 'tasks_delete' task.id %}">Delete</a>
-            </div>
-        </div>
-    </div>
 
-    <script>
-        const dateEl = document.getElementById('id_date');
-        M.Datepicker.init(dateEl, {
-            format: 'yyyy-mm-dd',
-            defaultDate: new Date(),
-            setDefaultDate: true,
-            autoClose: true
-        });
-        const selectEl = document.getElementById('id_meal');
-        M.FormSelect.init(selectEl);
-    </script>
-</div>
 <!-- Featured Events Start Here -->
 
-{% endblock %}
+        <script>
+            const dateEl = document.getElementById('id_date');
+            M.Datepicker.init(dateEl, {
+                format: 'yyyy-mm-dd',
+                defaultDate: new Date(),
+                setDefaultDate: true,
+                autoClose: true
+            });
+            const selectEl = document.getElementById('id_meal');
+            M.FormSelect.init(selectEl);
+        </script>
+    </div>
+
+    {% endblock %}

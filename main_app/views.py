@@ -76,7 +76,7 @@ def add_featured_event(request, task_id):
 # Class'set
 class TaskCreate(LoginRequiredMixin ,CreateView):
     model = Task
-    fields = ['name', 'description']
+    fields = ['name', 'description', 'date', 'time']
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
