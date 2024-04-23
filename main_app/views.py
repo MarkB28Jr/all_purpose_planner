@@ -72,16 +72,6 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-# @login_required
-# def add_featured_event(request, task_id):
-#   form = FeaturedEventForm(request.POST)
-#   if form.is_valid():
-#     new_featured_event = form.save(commit=False)
-#     new_featured_event.task_id = task_id
-#     new_featured_event.save()
-#   return redirect('detail', task_id=task_id)
-
-
 # FEATURED EVENTS
 
 @login_required
