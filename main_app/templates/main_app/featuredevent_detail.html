@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Featured Event Details</h1>
+
+<div class="row">
+  <div class="col s6 col-offset-3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ featuredevent.name }}</span>
+        <p>Description: {{ featuredevent.description }}</p>
+        <p>City: {{ featuredevent.city }}</p>
+        <p>State: {{ featuredvent.state }}</p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'featuredevents_update' featuredevent.id %}">Edit</a>
+        <a href="{% url 'featuredevents_delete' featuredevent.id %}">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
