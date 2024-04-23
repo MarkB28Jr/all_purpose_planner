@@ -1,6 +1,8 @@
+
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 # DATA for FeaturedEvents
 FEATUREDEVENTS = ( #Data in this tuple should look like this ('CcN', 'Comic Con, venue, city / state') 
@@ -19,8 +21,9 @@ FEATUREDEVENTS = ( #Data in this tuple should look like this ('CcN', 'Comic Con,
 # Create your models here
 class Task(models.Model):
     name = models.CharField(max_length=50)
-    description = models.TextField(max_length=200)# Image needs a default image
-    image_url = models.CharField(max_length=150, default='')
+    description = models.TextField(max_length=200)
+    date = models.DateField(default=timezone.now)  # Set default value to current date and time
+    time = models.TimeField(default=timezone.now)  # Set default value to current date and time
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -28,7 +31,7 @@ class Task(models.Model):
     def get_absolute_url(self):
         return reverse('detail', kwargs={'task_id': self.id})
     def add_featured_event(self):
-        return self.feeding_set.filter(date=date.today()).count() >= len(FEATUREDEVENTS)
+        return self.featured_event_set.filter(date=date.today()).count() >= len(FEATUREDEVENTS)
 
 class FeaturedEvent(models.Model):
     description = models.TextField(max_length=200)# Image needs a default image
@@ -42,7 +45,7 @@ class FeaturedEvent(models.Model):
 
 class Photo(models.Model):
     url = models.CharField(max_length=200)
-    featured_event = models.ForeignKey(FeaturedEvent, on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, default='', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Photo for FeaturedEvent: {self.featured_event_id} @{self.url}"
+        return f"Task Photo: {self.task_id} @{self.url}"

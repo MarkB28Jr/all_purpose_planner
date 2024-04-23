@@ -33,7 +33,7 @@ def tasks_detail(request, task_id):
     return render(request, 'tasks/detail.html', {'task': task})
 
 @login_required
-def add_photo(request, featured_event_id):
+def add_photo(request, task_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
         s3 = boto3.client('s3')
@@ -42,11 +42,11 @@ def add_photo(request, featured_event_id):
             bucket = os.environ['S3_BUCKET']
             s3.upload_fileobj(photo_file, bucket, key)
             url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
-            Photo.objects.create(url=url, featured_event_id=featured_event_id)
+            Photo.objects.create(url=url, task_id=task_id)
         except Exception as e:
             print('An error occurred uploading file to S3')
             print(e)
-    return redirect('home')  # Redirect to home if no photo is provided
+    return redirect('detail', task_id=task_id)  # Redirect to home if no photo is provided
 
 def signup(request):
     if request.user.is_authenticated:
@@ -65,18 +65,18 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 @login_required
-def add_featured_event(request, cat_id):
-  form = FeedingForm(request.POST)
+def add_featured_event(request, task_id):
+  form = FeaturedEventForm(request.POST)
   if form.is_valid():
-    new_feeding = form.save(commit=False)
-    new_feeding.cat_id = cat_id
-    new_feeding.save()
-  return redirect('detail', cat_id=cat_id)
+    new_featured_event = form.save(commit=False)
+    new_featured_event.task_id = task_id
+    new_featured_event.save()
+  return redirect('detail', task_id=task_id)
 
 # Class'set
 class TaskCreate(LoginRequiredMixin ,CreateView):
     model = Task
-    fields = ['name', 'description']
+    fields = ['name', 'description', 'date', 'time']
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
