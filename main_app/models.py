@@ -24,6 +24,7 @@ class Task(models.Model):
     description = models.TextField(max_length=200)
     date = models.DateField(default=timezone.now)  # Set default value to current date and time
     time = models.TimeField(default=timezone.now)  # Set default value to current date and time
+    description = models.TextField(max_length=200)# Image needs a default image
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -49,3 +50,5 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"Task Photo: {self.task_id} @{self.url}"
+
+
