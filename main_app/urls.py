@@ -14,6 +14,6 @@ urlpatterns = [
     path('tasks/<int:task_id>/add_photo/', views.add_photo, name='add_photo'),
     path('featured_event/', views.featured_event, name='featured_event'),
     path('tasks/<int:task_id>/add_featured_event/', views.add_featured_event, name='add_featured_event'),
-    path('events/', views.featured_event, name='events'),
+    path('events/', views.featured_event, name='events')
 ]
 
