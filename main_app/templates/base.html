@@ -22,9 +22,10 @@
                     <a href="{% url 'home' %}" class="brand-logo">&nbsp;&nbsp;A.P.P&nbsp;&nbsp;</a>
                 </ul>
                 <ul class="right">
-                   <!-- <li><a href="{% url 'about' %}">About</a></li> -->
+                   <li><a href="{% url 'about' %}">About</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'featured_event' %}">Featured Events</a></li>
+                    <li><a href="{% url 'featuredevents_create' %}">Add a Featured Event</a></li>
+                    <li><a href="{% url 'featuredevents_index' %}">View All Featured Events</a></li>
                     <li><a href="{% url 'tasks_create' %}">Add Task</a></li>
                     <li><a href="{% url 'index' %}">Tasks</a></li>
                     <li>

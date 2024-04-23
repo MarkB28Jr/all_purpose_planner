@@ -3,6 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.utils import timezone
+from datetime import date
 
 # DATA for FeaturedEvents
 FEATUREDEVENTS = ( #Data in this tuple should look like this ('CcN', 'Comic Con, venue, city / state') 
@@ -24,7 +25,7 @@ class Task(models.Model):
     description = models.TextField(max_length=200)
     date = models.DateField(default=timezone.now)  # Set default value to current date and time
     time = models.TimeField(default=timezone.now)  # Set default value to current date and time
-    description = models.TextField(max_length=200)# Image needs a default image
+    image_url = models.CharField(max_length=150, default='') # Image needs a default image
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -35,7 +36,10 @@ class Task(models.Model):
         return self.featured_event_set.filter(date=date.today()).count() >= len(FEATUREDEVENTS)
 
 class FeaturedEvent(models.Model):
+    name = models.CharField(max_length=75, default='')
     description = models.TextField(max_length=200)# Image needs a default image
+    city = models.CharField(max_length=100, default='')
+    state = models.CharField(max_length=2, default='')
     image_url = models.CharField(max_length=150, default='') 
     featuredEvents =models.CharField(
         max_length=150,
@@ -43,6 +47,8 @@ class FeaturedEvent(models.Model):
     )
     def __str__(self):
         return self.name
+    def get_absolute_url(self):
+        return reverse('featuredevents_detail', kwargs={'pk': self.id})
 
 class Photo(models.Model):
     url = models.CharField(max_length=200)
