@@ -27,14 +27,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# Copy the entire SECRET_KEY line into your .env file and then change it to read:
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Replace the DEBUG = True with:
 DEBUG = True if os.environ['MODE'] == 'dev' else False
 
-# Change this according to your needs:
 ALLOWED_HOSTS = ['*']
 
 
@@ -86,7 +83,7 @@ WSGI_APPLICATION = 'all_purpose_planner.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
+  'default': dj_database_url.config(conn_max_age=600)
 }
 
 
