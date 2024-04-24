@@ -14,6 +14,8 @@ urlpatterns = [
     path('tasks/<int:task_id>/add_photo/', views.add_photo, name='add_photo'),
 
     path('featuredevents/', views.FeaturedEventList.as_view(), name='featuredevents_index'),
+    
+
     path('featuredevents/<int:pk>/', views.FeaturedEventDetail.as_view(), name='featuredevents_detail'),
     path('featuredevents/create/', views.FeaturedEventCreate.as_view(), name='featuredevents_create'),
     path('featuredevents/<int:pk>/update/', views.FeaturedEventUpdate.as_view(), name='featuredevents_update'),
