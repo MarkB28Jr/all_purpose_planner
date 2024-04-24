@@ -49,9 +49,8 @@ class FeaturedEvent(models.Model):
         return self.name
     def get_absolute_url(self):
         return reverse('featuredevents_detail', kwargs={'pk': self.id})
-    class Meta:
-    ordering = ['-date']
     
+
 class Photo(models.Model):
     url = models.CharField(max_length=200)
     task = models.ForeignKey(Task, default='', on_delete=models.CASCADE)

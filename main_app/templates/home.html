@@ -31,6 +31,8 @@
     .testimonial .card-panel p {
         margin: 0; 
     }
+
+ 
 </style>
 
 
@@ -46,9 +48,16 @@
     <div class="row">
         <div class="col s12">
             <h6 class="grey-text text-darken-2">Want to know about Us?</h6>
-            <p class="grey-text text-darken-3"><a href="{% url 'about' %}" class="btn about-link"><strong>Hop on In</strong></a> <i class="material-icons">arrow_backward</i></p>
+            <p class="grey-text text-darken-3">
+                <a href="{% url 'about' %}" class="btn about-link">
+                    <i class="material-icons">arrow_forward</i> 
+                    <strong class="hop-on-in">Hop on In</strong>
+                    <i class="material-icons">arrow_backward</i> 
+                </a>
+            </p>
         </div>
     </div>
+    
     
     <!-- Testimonials -->
     <div class="row">
