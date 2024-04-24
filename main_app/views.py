@@ -35,7 +35,9 @@ def tasks_index(request):
 @login_required
 def tasks_detail(request, task_id):
     task = Task.objects.get(id=task_id)
-    return render(request, 'tasks/detail.html', {'task': task})
+    id_list = task.featuredevents.all().values_list('id')
+    featuredevents_task_doesnt_have = FeaturedEvent.objects.exclude(id__in=id_list)
+    return render(request, 'tasks/detail.html', {'task': task, 'featuredevents': featuredevents_task_doesnt_have})
 
 #ADD PHOTO
 @login_required

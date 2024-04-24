@@ -17,11 +17,13 @@
 
 <div class="row">
     <!-- Start of the Details  -->
-    <div class="col s6">
+    <div class="col s8">
         <div class="card">
             <div class="card-content" id="full-detail-card">
-                <span class="card-title">{{ task.name }}</span>
-                <p>Description: {{ task.description|linebreaks }}</p>
+                <span class="card-title"><strong>{{ task.name }}</strong></span>
+                <p>Description: {{ task.description }}</p>
+                <p>Time: {{ task.time }}</p>
+                <p>Date: {{ task.date }}</p>
             </div>
             <div class="card-action">
                 <a href="{% url 'tasks_update' task.id %}">Edit</a>
@@ -40,6 +42,37 @@
             </form>
         </div>
 
-    </div>
 
-    {% endblock %}
+
+    </div>
+    <!-- Featured Events Start Here -->
+    <div class="col s4">
+        {% for featuredevent in featuredevents.all %}
+        <div class="card">
+            <div class="card-content">
+                <span class="card-title">
+                    <span><strong>{{ featuredevent.name }}</strong></span>
+                    <span><strong>{{ featuredevent.description }}</strong></span>
+                </span>
+            </div>
+            <div class="card-action">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" class="btn">Add</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <script>
+        const dateEl = document.getElementById('id_date');
+        M.Datepicker.init(dateEl, {
+            format: 'yyyy-mm-dd',
+            defaultDate: new Date(),
+            setDefaultDate: true,
+            autoClose: true
+        });
+    </script>
+</div>
+
+{% endblock %}
