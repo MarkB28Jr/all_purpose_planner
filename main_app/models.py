@@ -47,8 +47,10 @@ class Task(models.Model):
         return f'{self.name} ({self.id})' 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'task_id': self.id})
+
     # def add_featuredevent(self):
     #     return self.featuredevent_set.filter(date=date.today()).count() >= len(FEATUREDEVENTS)
+
 
 class Photo(models.Model):
     url = models.CharField(max_length=200)
