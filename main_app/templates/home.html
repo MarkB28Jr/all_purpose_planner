@@ -1,9 +1,43 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url("{% static 'img/tablet.png' %}");
+        background-position: right;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        color: rgb(59, 42, 42); /* Set text color to white for better visibility */
+    }
+
+    .container {
+        margin-top: 10px; 
+        margin-left: 10px; 
+        max-width: 100%; 
+    }
+
+    .testimonial {
+        margin-bottom: 20px; 
+    }
+
+    .testimonial .card-panel {
+        height: 200px; 
+        overflow: hidden; 
+    }
+
+    .testimonial .card-panel p {
+        margin: 0; 
+    }
+</style>
+
+
 <div class="container">
     <div class="row">
         <div class="col s12">
-            <h2 class="grey-text text-darken-2">All Purpose Planner</h2>
+            <h4 class="grey-text text-darken-2">All Purpose Planner</h4>
             <p>Welcome to the All Purpose Planner application!</p>
             <p>Organize your daily tasks and enhance your productivity with our user-friendly planner.</p>
         </div>
@@ -11,33 +45,42 @@
 
     <div class="row">
         <div class="col s12">
-            <h3 class="grey-text text-darken-2">Want to know about Us?</h3>
-            <p class="grey-text text-darken-3">Please <a href="{% url 'about' %}" class="about-link"><strong>Hop on In</strong></a> <i class="material-icons">arrow_backward</i></p>
+            <h6 class="grey-text text-darken-2">Want to know about Us?</h6>
+            <p class="grey-text text-darken-3"><a href="{% url 'about' %}" class="btn about-link"><strong>Hop on In</strong></a> <i class="material-icons">arrow_backward</i></p>
         </div>
     </div>
     
     <!-- Testimonials -->
     <div class="row">
-        <h2 class="grey-text text-darken-2">Testimonials</h2>
+        <div class="col s12">
+            <h4 class="grey-text text-darken-2">Testimonials</h4>
+        </div>
         <div class="col s12 m4">
-            <div class="testimonial">
-                <p><strong>Kevin Jackson</strong></p>
-                <p>No words. Truly amazing and user-friendly</p>
-                <p>Rating: &#9733;&#9733;&#9733;&#9733;</p>
+            <div class="card-panel teal lighten-2">
+                <p class="white-text"><strong>Kevin Jackson</strong></p>
+                <p class="white-text">No words. Truly amazing and user-friendly</p>
+                <p class="white-text">Rating: &#9733;&#9733;&#9733;&#9733;</p>
             </div>
         </div>
         <div class="col s12 m4">
-            <div class="testimonial">
-                <p><strong>Yana SB</strong></p>
-                <p>All Purpose Planner App guides me to be on time and follow the discipline.</p>
-                <p>Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <div class="card-panel teal lighten-2">
+                <p class="white-text"><strong>Yana SB</strong></p>
+                <p class="white-text">All Purpose Planner App guides me to be on time and follow the discipline.</p>
+                <p class="white-text">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</p>
             </div>
         </div>
         <div class="col s12 m4">
-            <div class="testimonial">
-                <p><strong>Sabrina Walton</strong></p>
-                <p>This Tracker App is awesome. I am able to trace my daily life.</p>
-                <p>Rating: &#9733;&#9733;&#9733;&#9733;</p>
+            <div class="card-panel teal lighten-2">
+                <p class="white-text"><strong>Sabrina Walton</strong></p>
+                <p class="white-text">This Tracker App is awesome. I am able to trace my daily life.</p>
+                <p class="white-text">Rating: &#9733;&#9733;&#9733;&#9733;</p>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="card-panel teal lighten-2">
+                <p class="white-text"><strong>Elma Sniper</strong></p>
+                <p class="white-text">Speechless.</p>
+                <p class="white-text">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</p>
             </div>
         </div>
     </div>

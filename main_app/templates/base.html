@@ -12,30 +12,66 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        
+        .logo {
+            height: 45px; 
+            margin-left: 15px; 
+            margin-top: 9px; 
+        }
+
+        .nav-wrapper ul li a {
+            padding: 0 10px; 
+        }
+
+        /* Additional style for the nav buttons */
+        .nav-wrapper ul li form {
+            padding: 6px;
+        }
+    </style>
 </head>
 
 <body>
     <header class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper blue lighten-2">
-                <ul>
-                    <a href="{% url 'home' %}" class="brand-logo">&nbsp;&nbsp;A.P.P&nbsp;&nbsp;</a>
-                </ul>
+            <div class="nav-wrapper blue-grey lighten-2">
+                <a href="{% url 'home' %}" class="brand-logo">
+                    <img src="{% static 'img/logo.png' %}" alt="Logo" class="logo">
+                </a>
                 <ul class="right">
-                   <li><a href="{% url 'about' %}">About</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'featuredevents_create' %}">Add a Featured Event</a></li>
-                    <li><a href="{% url 'featuredevents_index' %}">View All Featured Events</a></li>
-                    <li><a href="{% url 'tasks_create' %}">Add Task</a></li>
-                    <li><a href="{% url 'index' %}">Tasks</a></li>
                     <li>
+                        
+                        <form method="get" action="{% url 'featuredevents_create' %}">
+                            <button type="submit" class="btn">Add a Featured Event</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form method="get" action="{% url 'featuredevents_index' %}">
+                            <button type="submit" class="btn">View All Featured Events</button>
+                        </form>
+                    </li>
+                    
+                    <li>
+                        <form method="get" action="{% url 'tasks_create' %}">
+                            <button type="submit" class="btn">Add Task</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form method="get" action="{% url 'index' %}">
+                            <button type="submit" class="btn">Tasks</button>
+                        </form>
+                    </li>
+                    <li>
+                        <!-- Logout form button -->
                         <form id="logout-form" method="post" action="{% url 'logout' %}">
                             {% csrf_token %}
                             <button type="submit" class="btn">LOG OUT</button>
                         </form>
                     </li>
                     {% else %}
-                    <li><a href="{% url 'login' %}" class="btn">Log In&nbsp;&nbsp;</a></li>
+                    <li><a href="{% url 'signup' %}" class="btn">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}" class="btn">Log In</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -45,9 +81,42 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="page-footer grey lighten-2">
-        <div class="right-bottom">All Rights Reserved, &copy; {% now 'Y' %} Tasks Planner &nbsp;</div>
-    </footer>
-</body>
+    <footer class="page-footer blue-grey lighten-2">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="right-bottom">All Rights Reserved, &copy; {% now 'Y' %} <A class="P P"></A> &nbsp;</div>
+                   
+                    <span>Contact & Follow @:</span>
 
-</html>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/al33ma.sharma?mibextid=LQQJ4d"><img src="{% static 'img/fb.jpeg' %}" alt="Facebook" style="width: 30px;"></a>
+                        <a href="https://www.instagram.com/little_avocado"><img src="{% static 'img/insta.jpeg' %}" alt="Instagram" style="width: 30px;"></a>
+                        <a href="https://www.tiktok.com/@al_sh415"><img src="{% static 'img/tiktok.jpeg' %}" alt="TikTok" style="width: 32px;"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col s12">
+                    <ul>
+            
+                        <a href="#" id="privacy-policy-link">Privacy Policy</a>
+                        <span class="policy-note" id="privacy-policy-note" style="display: none;">
+                            
+                            <ol>
+                                <li>Information Collection and Use: We may collect personal information from users in various ways, including, but not limited to, when users visit our site, register on the site, subscribe to the newsletter, respond to a survey, fill out a form, and in connection with other activities, services, features, or resources we make available on our site. Users may be asked for, as appropriate, name, email address, mailing address, phone number, and credit card information.</li>
+                                <li>How We Use Collected Information: We may use the information we collect from users for various purposes, including to improve customer service, personalize user experience, improve our site, process transactions, send periodic emails, administer a contest, promotion, survey, or other site feature.</li>
+                                <li>Protection of Information: We adopt appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information, username, password, transaction information, and data stored on our site.</li>
+                                <li>Sharing Personal Information: We do not sell, trade, or rent users' personal identification information to others.</li>
+                                <li>Changes to This Privacy Policy: We reserve the right to update or change our Privacy Policy at any time.</li>
+                            </ol>
+                            Contacting Us: If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us. This document was last updated on [Date].
+                        </span>
+            </div>
+        </div>
+    </footer>
+    </body>
+    
+    </html>
+    
