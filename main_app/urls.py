@@ -20,8 +20,8 @@ urlpatterns = [
     path('featuredevents/create/', views.FeaturedEventCreate.as_view(), name='featuredevents_create'),
     path('featuredevents/<int:pk>/update/', views.FeaturedEventUpdate.as_view(), name='featuredevents_update'),
     path('featuredevents/<int:pk>/delete/', views.FeaturedEventDelete.as_view(), name='featuredevents_delete'),
-    path('tasks/<int:task_id>/assoc_featured_event/<int:featuredevent_id>/', views.assoc_featuredevent, name='assoc_featuredevents'),
-    path('tasks/<int:task_id>/remove_featured_event/<int:featuredevent_id>/', views.remove_featuredevent, name='remove_featuredevents'),
+    path('tasks/<int:task_id>/assoc_featuredevent/<int:featuredevent_id>/', views.assoc_featuredevent, name='assoc_featuredevent'),
+    path('tasks/<int:task_id>/remove_featuredevent/<int:featuredevent_id>/', views.remove_featuredevent, name='remove_featuredevent'),
 
 ]
 

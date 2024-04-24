@@ -9,7 +9,8 @@
         background-position: right;
         background-size: cover;
         background-repeat: no-repeat;
-        color: rgb(59, 42, 42); /* Set text color to white for better visibility */
+        color: rgb(59, 42, 42);
+        /* Set text color to white for better visibility */
     }
 </style>
 
@@ -17,7 +18,7 @@
 
 <div class="row">
     <!-- Start of the Details  -->
-    <div class="col s8">
+    <div class="col s12">
         <div class="card">
             <div class="card-content" id="full-detail-card">
                 <span class="card-title"><strong>{{ task.name }}</strong></span>
@@ -43,23 +44,51 @@
         </div>
     </div>
     <!-- Featured Events Start Here -->
-    <div class="col s4">
-        {% for featuredevent in featuredevents.all %}
-        <div class="card">
-            <div class="card-content">
-                <span class="card-title">
-                    <span><strong>{{ featuredevent.name }}</strong></span>
-                    <span><strong>{{ featuredevent.description }}</strong></span>
-                </span>
+    <div class="row">
+        <div class="col s6">
+            <h3>Featured Events Tagged</h3>
+            {% if featuredevents.count %}
+            {% for featuredevent in task.featuredevents.all %}
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">
+                        <span><strong>{{ featuredevent.name }}</strong></span>
+                        <span><strong>{{ featuredevent.description }}</strong></span>
+                    </span>
+                </div>
+                <div class="card-action">
+                    <form action="{% url 'remove_featuredevent' task.id featuredevent.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="waves-effect waves-light btn-small">REMOVE
+                            <i class="material-icons right">delete</i>
+                        </button>
+                    </form>
+                </div>
             </div>
-            <div class="card-action">
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    <button type="submit" class="btn">Add</button>
-                </form>
-            </div>
+            {% endfor %}
+            {% endif %}
         </div>
-        {% endfor %}
+        <div class="col s6">
+            <h3>Possible Featured Events</h3>
+            {% if featuredevents.count %}
+            {% for featuredevent in featuredevents.all %}
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">
+                        <span><strong>{{ featuredevent.name }}</strong></span>
+                        <span><strong>{{ featuredevent.description }}</strong></span>
+                    </span>
+                </div>
+                <div class="card-action">
+                    <form action="{% url 'assoc_featuredevent' task.id featuredevent.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">Add<i class="material-icons right">add</i></button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
     </div>
     <script>
         const dateEl = document.getElementById('id_date');
