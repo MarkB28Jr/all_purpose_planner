@@ -9,7 +9,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         color: rgb(59, 42, 42);
-        /* Set text color to white for better visibility */
     }
 </style>
 
@@ -21,9 +20,9 @@
         <div class="card">
             <div class="card-content" id="full-detail-card">
                 <span class="card-title"><strong>{{ task.name }}</strong></span>
-                <p>Description: {{ task.description }}</p>
-                <p>Time: {{ task.time }}</p>
-                <p>Date: {{ task.date }}</p>
+                <p><strong>Description: {{ task.description }}</strong></p>
+                <p><strong>Time: {{ task.time }}</strong></p>
+                <p><strong>Date: {{ task.date }}</strong></p>
             </div>
             <div class="card-action">
                 <a href="{% url 'tasks_update' task.id %}">Edit</a>
@@ -95,6 +94,6 @@
                 {% endif %}
             </a>
         </div>
-        {% endfor %}
+
 
 {% endblock %}
