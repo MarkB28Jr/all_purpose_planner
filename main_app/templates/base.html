@@ -29,13 +29,13 @@
         footer {
             background-color: #607d8b; 
             color: #fff; 
-            padding: 30px;
+            padding: 5px;
             text-align: center;
         }
 
         footer span {
             display: none;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         footer a {
@@ -43,18 +43,17 @@
         }
 
         footer ul {
-            list-style-type: none;
-            padding: 6;
+            list-style-type:inherit;
+            padding: 0px;
         }
 
         footer ul li {
-            display: inline;
-            margin-right: 5px;
+            display:inline;
+            padding-top: 1px;
+           
         }
 
-        footer .center-align {
-            text-align: center;
-        }
+        
     </style>
 </head>
 
@@ -106,13 +105,9 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="page-footer blue-grey lighten-2 navbar-fixed">
-        
-            <div class="col s12 center-align">
-                
-                    All Rights Reserved, &copy; {% now 'Y' %} <a href="#" class="P P">A.P.P</a>
-               
-            </div>
+    <footer>
+        <div class="navbar-wrapper">
+            <h6>All Rights Reserved, &copy; {% now 'Y' %} <a href="#" class="P P">All Purpose Planner</a></h6> 
         </div>
         <ul class="center-align">
             <li>
@@ -129,13 +124,15 @@
                 </span>
             </li>
             <li>
-                <span>Contact & Follow @:</span>
+                <h6>Contact & Follow @:</h6>
                 <a href="https://www.facebook.com/al33ma.sharma?mibextid=LQQJ4d"><img src="{% static 'img/fb.jpeg' %}" alt="Facebook" style="width: 30px;"></a>
                 <a href="https://www.instagram.com/little_avocado"><img src="{% static 'img/insta.jpeg' %}" alt="Instagram" style="width: 30px;"></a>
                 <a href="https://www.tiktok.com/@al_sh415"><img src="{% static 'img/tiktok.jpeg' %}" alt="TikTok" style="width: 32px;"></a>
             </li>
         </ul>
+   
     </footer>
+
 </body>
 
 </html>
