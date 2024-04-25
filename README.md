@@ -108,9 +108,6 @@ CRUD (MVP)
 [Download PDF](/All%20Purpose%20PlannerPitch.pdf)
 
 
-
-
-
-
 # Credits
-- Materialized https://materializecss.com/grid.html
+- [Materialized](https://materializecss.com/grid.html)
+- [Unsplashed Background Images]: (https://unsplash.com/backgrounds/apps/website) 
