@@ -9,7 +9,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         color: rgb(59, 42, 42);
-        /* Set text color to white for better visibility */
     }
 </style>
 
@@ -21,9 +20,9 @@
         <div class="card">
             <div class="card-content" id="full-detail-card">
                 <span class="card-title"><strong>{{ task.name }}</strong></span>
-                <p>Description: {{ task.description }}</p>
-                <p>Time: {{ task.time }}</p>
-                <p>Date: {{ task.date }}</p>
+                <p><strong>Description: {{ task.description }}</strong></p>
+                <p><strong>Time: {{ task.time }}</strong></p>
+                <p><strong>Date: {{ task.date }}</strong></p>
             </div>
             <div class="card-action">
                 <a href="{% url 'tasks_update' task.id %}">Edit</a>
@@ -95,6 +94,28 @@
                 {% endif %}
             </a>
         </div>
-        {% endfor %}
+    </div>
+    <h1>Weather</h1>
+        <form method="post">
+            {% csrf_token %}
+        <div>
+            <input type="text" id="cityName" name='city' placeholder="Enter city">
+            <button type="submit">Search</button>
+        </div>
+        </form>
+        <div id="weatherInfo">
+            {% if country_code and temp and humidity and wind_speed %}
+                <p>Country Code: {{country_code}}</p>
+                <p>Temperature: {{temp}}</p>
+                <p>Humidity: {{humidity}}</p>
+                <p>Wind Speed: {{wind_speed}}</p>
+                <p>Forecast: {{main}}</p>
+            {% else %}
+                <p>No weather information available.</p>
+            {% endif %}
+        </div> 
+    </div>
+</div>
+
 
 {% endblock %}
