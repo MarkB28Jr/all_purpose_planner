@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: rgba(180, 201, 207, 0.954);
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: rgb(59, 42, 42);
+    }
+
+   
+    </style>
 
 {% if object %}
   <h1>Edit <span class="teal-text">{{ object.name }}</span></h1>
@@ -25,5 +38,6 @@
         autoClose: true
     });
 </script>
+
 
 {% endblock %}
