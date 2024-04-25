@@ -92,22 +92,33 @@ CRUD (MVP)
 
 
 # Wireframe
-
 ![Wireframe](wireframe-4-as.png)
 ![wireframe](wireframe-3-as.png)
 
 # ERD
-
 ![ERD](ERD-eric.PNG)
 
 # Trillo
-
 [Trillo planner page](https://trello.com/b/NBZibZ95/planner)
 
 # Project Pitch
 [Download PDF](/All%20Purpose%20PlannerPitch.pdf)
 
+# Tools we used:
+- Django
+- psql
+- HTML
+- APIs
+- JavaScript
+- CSS
+- Materialized
+- Python
+- ChatGPT
 
 # Credits
 - [Materialized](https://materializecss.com/grid.html)
-- [Unsplashed Background Images]: (https://unsplash.com/backgrounds/apps/website) 
+- [How to Drop a Database](/https://www.google.com/search?q=postgresql+drop+database+command+line&sca_esv=5d0811d5ae0715ef&rlz=1C1VDKB_enUS945US945&biw=1214&bih=1288&tbm=vid&ei=iewnZvOhF8rGp84Py5qlgA0&ved=0ahUKEwizio2I69iFAxVK48kDHUtNCdAQ4dUDCA0&uact=5&oq=postgresql+drop+database+command+line&gs_lp=Eg1nd3Mtd2l6LXZpZGVvIiVwb3N0Z3Jlc3FsIGRyb3AgZGF0YWJhc2UgY29tbWFuZCBsaW5lMggQABiABBiiBDIIEAAYgAQYogQyCBAAGIAEGKIESJMCUABYAHAAeACQAQCYAVygAVyqAQExuAEDyAEA-AEBmAIBoAJfmAMAkgcBMaAHuAI&sclient=gws-wiz-video#fpstate=ive&vld=cid:9b08efbc,vid:S26jetR0M8I,st:0)
+- GA Canavas Modules
+- GA Previously built projects
+- ChatGPT (fixing problems that we could not see)
+
