@@ -78,7 +78,7 @@ def signup(request):
 
 @login_required
 def assoc_featuredevent(request, task_id, featuredevent_id):
-  TasK.objects.get(id=task_id).featuredevents.add(featuredevent_id)
+  Task.objects.get(id=task_id).featuredevents.add(featuredevent_id)
   return redirect('detail', task_id=task_id)
 
 @login_required

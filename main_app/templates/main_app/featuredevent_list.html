@@ -22,12 +22,11 @@
   <a href="{% url 'featuredevents_detail' featuredevent.id %}">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ featuredevent.name }}</span>
-        <p>Description: {{ featuredevent.description|linebreaks }}</p>
-        <p>City: {{ featuredevent.city|linebreaks }}</p>
-        <p>State: {{ featuredevent.state|linebreaks }}</p>
+        <span class="card-title"><strong>{{ featuredevent.name }}</strong></span>
+        <p><strong>Description: {{ featuredevent.description }}</strong></p>
+        <p><strong>City: {{ featuredevent.city }}</strong></p>
+        <p><strong>State: {{ featuredevent.state }}</strong></p>
       </div>
-
     </div>
   </a>
 {% endfor %}
