@@ -5,8 +5,7 @@
     body {
         margin: 0;
         padding: 0;
-        background-image: url("{% static 'img/todod.png' %}");
-        background-position: right;
+        background-image: url("{% static 'img/task.jpeg' %}");
         background-size: cover;
         background-repeat: no-repeat;
         color: rgb(59, 42, 42);
@@ -96,16 +95,6 @@
                 {% endif %}
             </a>
         </div>
-    </div>
-    <script>
-        const dateEl = document.getElementById('id_date');
-        M.Datepicker.init(dateEl, {
-            format: 'yyyy-mm-dd',
-            defaultDate: new Date(),
-            setDefaultDate: true,
-            autoClose: true
-        });
-    </script>
-</div>
+        {% endfor %}
 
 {% endblock %}
