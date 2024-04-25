@@ -2,6 +2,8 @@
 import uuid
 import boto3
 import os
+import urllib.request
+import json
 
 # From | import
 from django.shortcuts import render, redirect
@@ -85,6 +87,29 @@ def assoc_featuredevent(request, task_id, featuredevent_id):
 def remove_featuredevent(request, task_id, featuredevent_id):
   Task.objects.get(id=task_id).featuredevents.remove(featuredevent_id)
   return redirect('detail', task_id=task_id)
+
+
+
+# weather api
+def weather(request):
+    if request.method == 'POST':
+        city = request.POST['city']
+        source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' + 
+                                        city + '&units=imperial&appid=5fd61e5d5dec55d26bb4982c9cf2f237').read()
+        dataList = json.loads(source)
+        
+        data = {
+            "country_code": str(dataList['sys']['country']),
+            "temp": str(dataList['main']['temp']) + ' F',
+            "humidity": str(dataList['main']['humidity']),
+            "main": str(dataList['weather'][0]['main']),
+            "wind_speed": str(dataList['wind']['speed']) + ' mph',
+        }
+        print(data)
+    else :
+        data = {}
+        
+    return render(request, "tasks/detail.html", data)
 
 # Class'set
 class TaskCreate(LoginRequiredMixin ,CreateView):
