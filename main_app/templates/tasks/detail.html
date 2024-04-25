@@ -2,12 +2,12 @@
 {% block content %}
 {% load static %}
 <style>
+ 
     body {
         margin: 0;
         padding: 0;
-        background-image: url("{% static 'img/todo.png' %}");
-        background-position: right;
-        background-size: cover;
+        background-image: url("{% static 'img/list.jpg' %}");
+        background-size: 75%;
         background-repeat: no-repeat;
         color: rgb(59, 42, 42); 
     }
@@ -62,6 +62,7 @@
                 </form>
             </div>
         </div>
+        {% endfor %}
+    
 
- 
 {% endblock %}

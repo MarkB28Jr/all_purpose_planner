@@ -6,16 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}All Purpose Planner{% endblock %}</title>
+    <title>All Purpose Planner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <style>
         .logo {
-            height: 45px;
-            margin-left: 15px;
-            margin-top: 9px;
+            height: 30px;
+            margin-left: 10px;
+            margin-top: 8px;
         }
 
         .nav-wrapper ul li a {
@@ -24,6 +24,36 @@
 
         .nav-wrapper ul li form {
             padding: 6px;
+        }
+
+        footer {
+            background-color: #607d8b; 
+            color: #fff; 
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer span {
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            margin: 0 5px;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 6;
+        }
+
+        footer ul li {
+            display: inline;
+            margin-right: 5px;
+        }
+
+        footer .center-align {
+            text-align: center;
         }
     </style>
 </head>
@@ -76,39 +106,36 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer class="page-footer">
-        <div class="right">All Rights Reserved, &copy; {% now 'Y' %} Your Company Name &nbsp;</div>
-        <div class="row">
+    <footer class="page-footer blue-grey lighten-2 navbar-fixed">
+        
             <div class="col s12 center-align">
-                <ul class="policy-links">
-                    <li>
-                        <a href="#" id="privacy-policy-link">Privacy Policy</a>
-                        <span class="policy-note" id="privacy-policy-note">
-                            <ol>
-                                <li>Information Collection and Use: We may collect personal information from users in various ways, including, but not limited to, when users visit our site, register on the site, subscribe to the newsletter, respond to a survey, fill out a form, and in connection with other activities, services, features, or resources we make available on our site. Users may be asked for, as appropriate, name, email address, mailing address, phone number, and credit card information.</li>
-                                <li>How We Use Collected Information: We may use the information we collect from users for various purposes, including to improve customer service, personalize user experience, improve our site, process transactions, send periodic emails, administer a contest, promotion, survey, or other site feature.</li>
-                                <li>Protection of Information: We adopt appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information, username, password, transaction information, and data stored on our site.</li>
-                                <li>Sharing Personal Information: We do not sell, trade, or rent users' personal identification information to others.</li>
-                                <li>Changes to This Privacy Policy: We reserve the right to update or change our Privacy Policy at any time.</li>
-                            </ol>
-                            Contacting Us: If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us. This document was last updated on [Date].
-                        </span>
-                    </li>
-                </ul>
+                
+                    All Rights Reserved, &copy; {% now 'Y' %} <a href="#" class="P P">A.P.P</a>
+               
             </div>
         </div>
-    
-        <div class="row">
-            <div class="col s12 center-align">
-                Contact & Follow @:
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/al33ma.sharma?mibextid=LQQJ4d"><img src="{% static 'img/fb.jpeg' %}" alt="Facebook" style="width: 30px;"></a>
-                    <a href="https://www.instagram.com/little_avocado"><img src="{% static 'img/insta.jpeg' %}" alt="Instagram" style="width: 30px;"></a>
-                    <a href="https://www.tiktok.com/@al_sh415"><img src="{% static 'img/tiktok.jpeg' %}" alt="TikTok" style="width: 32px;"></a>
-                </div>
-            </div>
-        </div>
+        <ul class="center-align">
+            <li>
+                <a href="#" id="privacy-policy-link">Privacy Policy</a>
+                <span class="policy-note" id="privacy-policy-note" style="display: none;">
+                    <ol>
+                        <li>Information Collection and Use: We may collect personal information from users in various ways, including, but not limited to, when users visit our site, register on the site, subscribe to the newsletter, respond to a survey, fill out a form, and in connection with other activities, services, features, or resources we make available on our site. Users may be asked for, as appropriate, name, email address, mailing address, phone number, and credit card information.</li>
+                        <li>How We Use Collected Information: We may use the information we collect from users for various purposes, including to improve customer service, personalize user experience, improve our site, process transactions, send periodic emails, administer a contest, promotion, survey, or other site feature.</li>
+                        <li>Protection of Information: We adopt appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information, username, password, transaction information, and data stored on our site.</li>
+                        <li>Sharing Personal Information: We do not sell, trade, or rent users' personal identification information to others.</li>
+                        <li>Changes to This Privacy Policy: We reserve the right to update or change our Privacy Policy at any time.</li>
+                    </ol>
+                    Contacting Us: If you have any questions about this Privacy Policy, the practices of this site, or your dealings with this site, please contact us. This document was last updated on [Date].
+                </span>
+            </li>
+            <li>
+                <span>Contact & Follow @:</span>
+                <a href="https://www.facebook.com/al33ma.sharma?mibextid=LQQJ4d"><img src="{% static 'img/fb.jpeg' %}" alt="Facebook" style="width: 30px;"></a>
+                <a href="https://www.instagram.com/little_avocado"><img src="{% static 'img/insta.jpeg' %}" alt="Instagram" style="width: 30px;"></a>
+                <a href="https://www.tiktok.com/@al_sh415"><img src="{% static 'img/tiktok.jpeg' %}" alt="TikTok" style="width: 32px;"></a>
+            </li>
+        </ul>
     </footer>
 </body>
+
 </html>
-    
