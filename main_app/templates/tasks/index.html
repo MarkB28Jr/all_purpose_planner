@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url("{% static 'img/photo.jpeg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: rgb(59, 42, 42);
+    }
+
+   
+    </style>
 
 <h1>All Tasks</h1>
 
@@ -15,6 +28,6 @@
     </div>
   </a>
   {% endfor %}
- 
+  
 
 {% endblock %}
