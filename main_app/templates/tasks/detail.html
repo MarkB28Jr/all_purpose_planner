@@ -106,7 +106,6 @@
         </div>
         </form>
         <div id="weatherInfo">
-            <!-- Weather information will be displayed here -->
             {% if country_code and temp and humidity and wind_speed %}
                 <p>Country Code: {{country_code}}</p>
                 <p>Temperature: {{temp}}</p>
@@ -116,8 +115,7 @@
             {% else %}
                 <p>No weather information available.</p>
             {% endif %}
-        </div>
-        
+        </div> 
     </div>
     <script>
         const dateEl = document.getElementById('id_date');
