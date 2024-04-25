@@ -109,7 +109,7 @@ def weather(request):
     else :
         data = {}
         
-    return render(request, "main/weather.html", data)
+    return render(request, "tasks/detail.html", data)
 
 # Class'set
 class TaskCreate(LoginRequiredMixin ,CreateView):
